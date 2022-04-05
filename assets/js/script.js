@@ -3,10 +3,12 @@ var tasksToDoE1 = document.querySelector("#tasks-to-do");
 
 var createTaskHandler = function (event) {
     event.preventDefault();
+
+    var taskNameInput = document.querySelector("input[name='task-name']").value;
    
     var listItemE1 = document.createElement("li");
     listItemE1.className = "task-item";
-    listItemE1.textContent = "This is a new task.";
+    listItemE1.textContent = taskNameInput;
     tasksToDoE1.appendChild(listItemE1);
 };
 
