@@ -7,6 +7,9 @@ var tasksCompletedEl = document.querySelector("#tasks-completed");
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
+var tasksInProgressEl = document.querySelector("#tasks-in-progress");
+var tasksCompletedEl = document.querySelector("#tasks-completed");
+
 var taskFormHandler = function (event) {
     event.preventDefault();
     var taskNameInput = document.querySelector("input[name='task-name']").value;
@@ -171,14 +174,14 @@ var editTask = function(taskId) {
 
 var taskStatusChangeHandler = function(event) {
     //get the task item's id
-    var taskId = event.target.getAttribute("data-task-id")
+    var taskId = event.target.getAttribute("data-task-id");
 
     //get the currently selected option's value and convert to lowercase
     var statusValue = event.target.value.toLowerCase();
 
-    //find the parent task item element based on the id
+    // find the parent task item element based on the id
     var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
-        
+
     if (statusValue === "to do") {
         tasksToDoEl.appendChild(taskSelected);
     }
